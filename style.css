@@ -1,0 +1,170 @@
+body {
+    padding: 20px;
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+#tier, #image-item {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+}
+
+#tier:focus, #image-item:focus {
+    outline: 2px solid #FF7F7F;
+    background-color: #404040;
+}
+
+.submitBtn {
+    padding: 10px 20px;
+    background-color: #FF7F7F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.submitBtn:hover {
+    background-color: #ff6666;
+    transform: translateY(-2px);
+}
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}
+
+.tier-list {
+    margin-top: 1.5rem;
+    border: 2px solid #333;
+    display: flex;
+    height: 100px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tier-list:hover {
+    border-color: #FF7F7F;
+    box-shadow: 0 0 10px rgba(255, 127, 127, 0.2);
+}
+
+/* Color progression for tiers */
+.tier-list:nth-child(1) .heading { background-color: #FF4545; } /* S Tier - Red */
+.tier-list:nth-child(2) .heading { background-color: #FF8D3F; } /* A Tier - Orange */
+.tier-list:nth-child(3) .heading { background-color: #FFD93D; } /* B Tier - Yellow */
+.tier-list:nth-child(4) .heading { background-color: #6BCB77; } /* C Tier - Green */
+.tier-list:nth-child(5) .heading { background-color: #4D96FF; } /* D Tier - Blue */
+.tier-list:nth-child(6) .heading { background-color: #9B72AA; } /* E Tier - Purple */
+.tier-list:nth-child(7) .heading { background-color: #FF6B6B; } /* F Tier - Light Red */
+
+/* Repeat colors for additional tiers */
+.tier-list:nth-child(8) .heading { background-color: #FF4545; }
+.tier-list:nth-child(9) .heading { background-color: #FF8D3F; }
+.tier-list:nth-child(10) .heading { background-color: #FFD93D; }
+/* ... and so on */
+
+.heading {
+    border-right: 2px solid #333;
+    min-width: 100px;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.heading > div {
+    padding: 0 15px;
+    word-break: break-word;
+    text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+#non-tier-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 20px;
+    min-height: 100px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.item-container {
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: grab;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    -webkit-user-select: none; /* For Safari */
+    user-select: none; /* Standard */
+}
+
+
+.item-container:active {
+    cursor: grabbing;
+}
+
+.item-container:hover {
+    transform: scale(1.05);
+}
+
+.tier-list-items {
+    min-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px;
+}
+
+.item-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Better dropzone visibility */
+.tier-list-items.dragover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
