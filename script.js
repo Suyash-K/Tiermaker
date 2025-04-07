@@ -78,6 +78,7 @@ function setUpItemContainerForDrag(itemContainer) {
     });
 }
 
+
 function setUpDropZoneInTierListItem(tierListItem) {
     tierListItem.addEventListener('dragover', (event) => {
         event.preventDefault();

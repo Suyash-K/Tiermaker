@@ -164,7 +164,6 @@ hr {
     pointer-events: none;
 }
 
-/* Better dropzone visibility */
 .tier-list-items.dragover {
     background-color: rgba(255, 255, 255, 0.1);
 }
